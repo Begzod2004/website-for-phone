@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 loader = "*"
 fancybox = "*"
+whitenoise = "==5.1.0"
+gunicorn = "*"
 
 [dev-packages]
 
