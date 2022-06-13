@@ -8,6 +8,7 @@ loader = "*"
 fancybox = "*"
 whitenoise = "==5.1.0"
 gunicorn = "*"
+heroku = "*"
 
 [dev-packages]
 
