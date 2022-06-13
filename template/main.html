@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+<style>
+    .hello{
+        width: 200px;
+    }
+</style>
+
+{% block content %}
+<h1>Smartfonlar magaziniga xush kelibsiz {{user|upper}}</h1>
+{% if brand %}
+    
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="pk" value={{brand.id}}>
+    <input type="text" class="input" name="name" placeholder="barnd name" value={{brand.name}}> <br><br>
+    <input  type="submit" class="input1" value="Change">
+</form>
+{% else %}
+
+
+{% endif %}
+
+<div class="brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Our Brand</h2>  
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brand-bg">
+        <div class="container">
+            <div class="row">
+
+               
+                
+<form class="hello" action="" method="get">
+    <input class="hellso" type="text" placeholder="name" name="name" />
+    <input type="submit" value="Search" />
+  </form>
+  
+
+
+            {% for item in phones %} 
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                    <div class="brand_box">
+                        <img src="{{item.img}}" alt="img" />
+                        <h3>${{item.price}}<strong class="red"></strong></h3>
+                        <p> Name:  {{item.name}}</p>
+                        <p> Memory:  {{item.memory}} GB</p>
+                        <p> Color:  {{item.color}}</p>
+                        <p> Fps:  {{item.fps}}</p>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+                <div class="col-md-12">
+                    <a class="read-more">See More</a>
+                </div>
+                <div class="col-md-12">
+                    <a class="read-more" href="{% url 'Brand' %}">Brand</a>
+                </div>
+                <div class="col-md-12">
+                    <a class="read-more" href="{% url 'Company' %}">Company</a>
+                </div>
+                <div class="col-md-12">
+                    <a class="read-more" href="{% url 'phones' %}">Phone</a>
+                </div>
+                <div class="col-md-12">
+                    <a class="read-more" href="{% url 'Fps' %}">Fps</a>
+                </div>
+                <div class="col-md-12">
+                    <a class="read-more" href="{% url 'sistem' %}">sistem</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
