@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'Phone',
         'USER': 'name',
         'PASSWORD': '1',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
